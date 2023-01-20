@@ -7,12 +7,11 @@ function App() {
     {
       path:'/',
       element: <Main></Main>,
-      children:[
-        {
-          path:'/summary',
-          element:<MovieSummary></MovieSummary>
-        }
-      ]
+    },
+    {
+      path:'/summary/:id',
+      loader:({params})=>fetch(`https://api.tvmaze.com/shows/${params.id}`),
+      element:<MovieSummary></MovieSummary>
     }
   ])
   return (

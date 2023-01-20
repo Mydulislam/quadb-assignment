@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 const Movie = ({ user }) => {
     const { show } = user;
     return (
@@ -13,14 +12,13 @@ const Movie = ({ user }) => {
                             <p>Language: {show.language}</p>
                         </div>
                         <div>
-                            <p>Status: {show.status}</p>
+                            <p className="my-0">Status: {show.status}</p>
                             <a href={show.url} target='_Blank' rel="noreferrer">Read More...</a>
                         </div>
                     </div>
                     {/* <Link className="btn btn-primary">Summary</Link> */}
                     <div className="text-center my-3">
-                        {/* <Button className="btn btn-primary">Movie Summary</Button> */}
-                        <Link to='/summary' className="btn btn-primary">Movie Summary</Link>
+                        <Link to={`/summary/${show.id}`} className="btn btn-primary">Movie Summary</Link>
                     </div>
                     
                 </div>
